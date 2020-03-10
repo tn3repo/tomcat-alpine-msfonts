@@ -1,4 +1,4 @@
-FROM tomcat:8.5-alpine
+FROM tomcat:8.5.51-alpine
 
 # Install msfonts
 RUN apk --no-cache add msttcorefonts-installer fontconfig && \

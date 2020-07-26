@@ -115,16 +115,6 @@ RUN set -eux; \
 	apk add --no-cache bash; \
 	find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +
 
-# verify Tomcat Native is working properly
-RUN set -e \
-	&& nativeLines="$(catalina.sh configtest 2>&1)" \
-	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" \
-	&& nativeLines="$(echo "$nativeLines" | sort -u)" \
-	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then \
-		echo >&2 "$nativeLines"; \
-		exit 1; \
-	fi
-
 # Remove default tomcat apps/docs/examples
 RUN rm -rvf /usr/local/tomcat/webapps/docs
 RUN rm -rvf /usr/local/tomcat/webapps/examples

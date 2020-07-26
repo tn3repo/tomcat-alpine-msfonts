@@ -70,7 +70,11 @@
                connectionTimeout="20000"
                redirectPort="8443"
                compression="on"
-               noCompressionUserAgents="gozilla, traviata" 
+               noCompressionUserAgents="gozilla, traviata"               
+               maxPostSize="2097152"
+               maxHttpHeaderSize="851200"
+               maxKeepAliveRequests="200"
+               socketBuffer="851200"
                compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json"
    />
     <!-- A "Connector" using the shared thread pool-->

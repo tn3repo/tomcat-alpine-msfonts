@@ -71,7 +71,7 @@
                redirectPort="8443"
                compression="on"
                noCompressionUserAgents="gozilla, traviata"               
-               maxPostSize="2097152"
+               maxPostSize="26214400"
                maxHttpHeaderSize="851200"
                maxKeepAliveRequests="200"
                socketBuffer="851200"

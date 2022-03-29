@@ -1,4 +1,4 @@
-FROM tn3repo/openjdk8-alpine-msfonts
+FROM dockertn3/openjdk8-alpine-msfonts
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
